@@ -22,6 +22,7 @@ type ActressService struct {
 	Offset      int64  `mapstructure:"offset"`
 	Sort        string `mapstructure:"sort"`
 	Initial     string `mapstructure:"initial"`
+	ActressID   string `mapstructure:"actress_id"`
 	Keyword     string `mapstructure:"keyword"`
 	Bust        string `mapstructure:"bust"`
 	GteBust     string `mapstructure:"gte_bust"`
@@ -103,6 +104,7 @@ func NewActressService(affiliateID, apiID string) *ActressService {
 		Offset:      DefaultAPIOffset,
 		Sort:        "",
 		Initial:     "",
+		ActressID:   "",
 		Keyword:     "",
 		Bust:        "",
 		GteBust:     "",
@@ -199,6 +201,12 @@ func (srv *ActressService) SetSort(sort string) *ActressService {
 // SetInitialはInitalパラメータに検索したい女優の頭文字をひらがなで設定します。
 func (srv *ActressService) SetInitial(initial string) *ActressService {
 	srv.Initial = TrimString(initial)
+	return srv
+}
+
+// SetInitial sets the specified argument to ActressService.ActressID.
+func (srv *ActressService) SetActressID(actressID string) *ActressService {
+	srv.ActressID = TrimString(actressID)
 	return srv
 }
 
@@ -376,6 +384,9 @@ func (srv *ActressService) BuildRequestURL() (string, error) {
 
 	if srv.Initial != "" {
 		queries.Set("initial", srv.Initial)
+	}
+	if srv.ActressID != "" {
+		queries.Set("actress_id", srv.ActressID)
 	}
 	if srv.Sort != "" {
 		queries.Set("sort", srv.Sort)
