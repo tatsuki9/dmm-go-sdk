@@ -30,39 +30,46 @@ $ go get gopkg.in/dmmlabo/dmm-go-sdk.v1
 ## 使用例 (商品検索APIの場合)
 
 ```
-package (
+package main
+
+import (
     "fmt"
     "github.com/dmmlabo/dmm-go-sdk"
+    "github.com/dmmlabo/dmm-go-sdk/api"
 )
 
-client := dmm.New("dummy-990", "foobarbazbuzz")
-api := client.Product
-api.SetSite(SiteGeneral)
-api.SetService("mono")
-api.SetFloor("dvd")
-api.SetSort("date")
-api.SetLength(1)
-result, err := api.Execute()
-if err != nil {
-    fmt.Println(err)
-} else {
-    fmt.Println(result)
+func main() {
+	client := dmm.New("dummy-990", "foobarbazbuzz")
+	dmmapi := client.Product
+	dmmapi.SetSite(api.SiteGeneral)
+	dmmapi.SetService("mono")
+	dmmapi.SetFloor("dvd")
+	dmmapi.SetSort("date")
+	dmmapi.SetLength(1)
+	result, err := api.Execute()
+	if err != nil {
+    	fmt.Println(err)
+	} else {
+    	fmt.Println(result)
+	}
 }
 ```
 
 もしくは
 
 ```
-package (
+package main
+import (
     "fmt"
     "github.com/dmmlabo/dmm-go-sdk/api"
 )
-
-rst, err := NewProductService( "dummy-999", "foobarbazbuzz").SetSite(SITE_ADULT).SetLength(1).Execute()
-if err != nil {
-    fmt.Println(err)
-} else {
-    fmt.Println(rst)
+func main() {
+	rst, err := NewProductService( "dummy-999", "foobarbazbuzz").SetSite(api.SiteAdult).SetLength(1).Execute()
+	if err != nil {
+    	fmt.Println(err)
+	} else {
+    	fmt.Println(rst)
+	}
 }
 ```
 
