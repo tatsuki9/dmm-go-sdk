@@ -36,7 +36,7 @@ import (
 )
 
 func main() {
-	rst, err := NewProductService("foobarbazbuzz", "dummy-999").SetSite(SiteAdult).SetLength(1).Execute()
+	rst, err := api.NewProductService("foobarbazbuzz", "dummy-999").SetSite(api.SiteAdult).SetLength(1).Execute()
 	if err != nil {
 	  fmt.Println(err)
 	} else {

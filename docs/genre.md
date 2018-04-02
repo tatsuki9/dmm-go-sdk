@@ -33,7 +33,7 @@ import (
   "github.com/DMMcomLabo/dmm-go-sdk/api"
 )
 func main() {
-	rst, err := NewGenreService("foobarbazbuzz", "dummy-999").SetFloorID("40").SetLength(1).Execute()
+	rst, err := api.NewGenreService("foobarbazbuzz", "dummy-999").SetFloorID("40").SetLength(1).Execute()
 	if err != nil {
 	  fmt.Println(err)
 	} else {

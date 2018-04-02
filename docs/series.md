@@ -35,7 +35,7 @@ import (
 )
 
 func main() {
-	rst, err := NewSeriesService("foobarbazbuzz", "dummy-999").SetFloorID("40").SetLength(1).Execute()
+	rst, err := api.NewSeriesService("foobarbazbuzz", "dummy-999").SetFloorID("40").SetLength(1).Execute()
 	if err != nil {
 	  fmt.Println(err)
 	} else {

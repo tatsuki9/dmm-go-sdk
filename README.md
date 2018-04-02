@@ -46,7 +46,7 @@ func main() {
 	dmmapi.SetFloor("dvd")
 	dmmapi.SetSort("date")
 	dmmapi.SetLength(1)
-	result, err := api.Execute()
+	result, err := dmmapi.Execute()
 	if err != nil {
     	fmt.Println(err)
 	} else {
@@ -64,7 +64,7 @@ import (
     "github.com/dmmlabo/dmm-go-sdk/api"
 )
 func main() {
-	rst, err := NewProductService( "dummy-999", "foobarbazbuzz").SetSite(api.SiteAdult).SetLength(1).Execute()
+	rst, err := api.NewProductService( "dummy-999", "foobarbazbuzz").SetSite(api.SiteAdult).SetLength(1).Execute()
 	if err != nil {
     	fmt.Println(err)
 	} else {

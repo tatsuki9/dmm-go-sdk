@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-	rst, err := NewFloorService("foobarbazbuzz", "dummy-999").Execute()
+	rst, err := api.NewFloorService("foobarbazbuzz", "dummy-999").Execute()
 	if err != nil {
 	  fmt.Println(err)
 	} else {

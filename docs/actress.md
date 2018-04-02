@@ -42,7 +42,7 @@ import (
 )
 
 func main() {
-	rst, err := NewActressService("foobarbazbuzz", "dummy-999").SetLength(1).Execute()
+	rst, err := api.NewActressService("foobarbazbuzz", "dummy-999").SetLength(1).Execute()
 	if err != nil {
 	  fmt.Println(err)
 	} else {
