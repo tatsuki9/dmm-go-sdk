@@ -2,44 +2,52 @@
 #### 使用例
 
 ```go
-package (  
+package main
+import (  
   "fmt"  
   "github.com/DMMcomLabo/dmm-go-sdk"  
 )  
 
-client := dmm.New("foobarbazbuzz", "dummy-990")
-api := client.Actress
-api.SetInitial("あ")
-api.SetKeyword("あさみ")
-api.SetBust("90")
-api.SetWaist("-60")
-api.SetHip("85-90")
-api.SetHeight("160")
-api.SetBirthday("19900101")
-api.SetSort("-name")
-api.SetLength(20)
-api.SetOffset(1)
-result, err := api.Execute()
-if err != nil {
-  fmt.Println(err)
-} else {
-  fmt.Println(result)
+func main() {
+
+	client := dmm.New("foobarbazbuzz", "dummy-990")
+	dmmapi := client.Actress
+	dmmapi.SetInitial("あ")
+	dmmapi.SetKeyword("あさみ")
+	dmmapi.SetBust("90")
+	dmmapi.SetWaist("-60")
+	dmmapi.SetHip("85-90")
+	dmmapi.SetHeight("160")
+	dmmapi.SetBirthday("19900101")
+	dmmapi.SetSort("-name")
+	dmmapi.SetLength(20)
+	dmmapi.SetOffset(1)
+	result, err := dmmapi.Execute()
+	if err != nil {
+	  fmt.Println(err)
+	} else {
+	  fmt.Println(result)
+	}
 }
 ```
 
 もしくは以下のように1行で書くこともできます。
 
 ```go
-package (
+package main
+ 
+import (
   "fmt"
   "github.com/DMMcomLabo/dmm-go-sdk/api"
 )
 
-rst, err := NewActressService("foobarbazbuzz", "dummy-999").SetLength(1).Execute()
-if err != nil {
-  fmt.Println(err)
-} else {
-  fmt.Println(rst)
+func main() {
+	rst, err := api.NewActressService("foobarbazbuzz", "dummy-999").SetLength(1).Execute()
+	if err != nil {
+	  fmt.Println(err)
+	} else {
+	  fmt.Println(rst)
+	}
 }
 ```
 

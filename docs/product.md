@@ -2,39 +2,46 @@
 ## 使用例
 
 ```
-package (  
+package main
+import (  
   "fmt"  
-  "github.com/DMMcomLabo/dmm-go-sdk"  
+  "github.com/DMMcomLabo/dmm-go-sdk"
+  "github.com/DMMcomLabo/dmm-go-sdk/api"
 )  
 
-client := dmm.New("foobarbazbuzz", "dummy-990")
-api := client.Product
-api.SetSite(SiteGeneral)
-api.SetService("mono")
-api.SetFloor("dvd")
-api.SetSort("date")
-api.SetLength(1)
-result, err := api.Execute()
-if err != nil {
-  fmt.Println(err)
-} else {
-  fmt.Println(result)
+func main() {
+	client := dmm.New("foobarbazbuzz", "dummy-990")
+	dmmapi := client.Product
+	dmmapi.SetSite(api.SiteGeneral)
+	dmmapi.SetService("mono")
+	dmmapi.SetFloor("dvd")
+	dmmapi.SetSort("date")
+	dmmapi.SetLength(1)
+	result, err := dmmapi.Execute()
+	if err != nil {
+	  fmt.Println(err)
+	} else {
+	  fmt.Println(result)
+	}
 }
 ```
 
 もしくは以下のように1行で書くこともできます。
 
 ```
-package (
+package main
+import (
   "fmt"
   "github.com/DMMcomLabo/dmm-go-sdk/api"
 )
 
-rst, err := NewProductService("foobarbazbuzz", "dummy-999").SetSite(SiteAdult).SetLength(1).Execute()
-if err != nil {
-  fmt.Println(err)
-} else {
-  fmt.Println(rst)
+func main() {
+	rst, err := api.NewProductService("foobarbazbuzz", "dummy-999").SetSite(api.SiteAdult).SetLength(1).Execute()
+	if err != nil {
+	  fmt.Println(err)
+	} else {
+	  fmt.Println(rst)
+	}
 }
 ```
 

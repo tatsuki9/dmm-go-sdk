@@ -2,34 +2,40 @@
 #### 使用例
 
 ```go
-package (  
+package main 
+import (  
   "fmt"  
   "github.com/DMMcomLabo/dmm-go-sdk"  
 )  
 
-client := dmm.New("foobarbazbuzz", "dummy-990")
-api := client.Floor
-result, err := api.Execute()
-if err != nil {
-  fmt.Println(err)
-} else {
-  fmt.Println(result)
+func main() {
+	client := dmm.New("foobarbazbuzz", "dummy-990")
+	dmmapi := client.Floor
+	result, err := dmmapi.Execute()
+	if err != nil {
+	  fmt.Println(err)
+	} else {
+	  fmt.Println(result)
+	}
 }
 ```
 
 もしくは以下のように1行で書くこともできます。
 
 ```go
-package (
+package main
+import (
   "fmt"
   "github.com/DMMcomLabo/dmm-go-sdk/api"
 )
 
-rst, err := NewFloorService("foobarbazbuzz", "dummy-999").Execute()
-if err != nil {
-  fmt.Println(err)
-} else {
-  fmt.Println(rst)
+func main() {
+	rst, err := api.NewFloorService("foobarbazbuzz", "dummy-999").Execute()
+	if err != nil {
+	  fmt.Println(err)
+	} else {
+	  fmt.Println(rst)
+	}
 }
 ```
 

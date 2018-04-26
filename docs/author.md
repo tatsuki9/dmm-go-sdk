@@ -2,38 +2,44 @@
 #### 使用例
 
 ```go
-package (  
+package main
+import (  
   "fmt"  
   "github.com/DMMcomLabo/dmm-go-sdk"  
 )  
 
-client := dmm.New("foobarbazbuzz", "dummy-990")
-api := client.Author
-api.SetFloorID("40")
-api.SetInitial("あ")
-api.SetLength(100)
-api.SetOffset(1)
-result, err := api.Execute()
-if err != nil {
-  fmt.Println(err)
-} else {
-  fmt.Println(result)
+func main() {
+	client := dmm.New("foobarbazbuzz", "dummy-990")
+	dmmapi := client.Author
+	dmmapi.SetFloorID("40")
+	dmmapi.SetInitial("あ")
+	dmmapi.SetLength(100)
+	dmmapi.SetOffset(1)
+	result, err := dmmapi.Execute()
+	if err != nil {
+	  fmt.Println(err)
+	} else {
+	  fmt.Println(result)
+	}
 }
 ```
 
 もしくは以下のように1行で書くこともできます。
 
 ```go
-package (
+package main
+import (
   "fmt"
   "github.com/DMMcomLabo/dmm-go-sdk/api"
 )
 
-rst, err := NewProductService("foobarbazbuzz", "dummy-999").SetFloorID("40").SetLength(1).Execute()
-if err != nil {
-  fmt.Println(err)
-} else {
-  fmt.Println(rst)
+func main() {
+	rst, err := api.NewProductService("foobarbazbuzz", "dummy-999").SetFloorID("40").SetLength(1).Execute()
+	if err != nil {
+	  fmt.Println(err)
+	} else {
+	  fmt.Println(rst)
+	}
 }
 ```
 
