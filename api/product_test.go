@@ -87,6 +87,16 @@ func TestSetKeywordInProductService(t *testing.T) {
 	}
 }
 
+func TestSetContentIDInProductService(t *testing.T) {
+	srv := dummyProductService()
+
+	var contentID = "15dss00145"
+	srv.SetContentID(contentID)
+	if srv.ContentID != contentID {
+		t.Fatalf("ProductService.ContentID is expected to equal the input value. value:%s", contentID)
+	}
+}
+
 func TestSetSiteInProductService(t *testing.T) {
 	srv := dummyProductService()
 
@@ -307,6 +317,17 @@ func TestBuildRequestURLInProductService(t *testing.T) {
 	}
 	srv.SetKeyword("")
 
+	srv.SetContentID("15dss00145")
+	expected = expectedBase + "&cid=15dss00145&site=" + SiteAdult
+	u, err = srv.BuildRequestURL()
+	if u != expected {
+		t.Fatalf("ProductService.BuildRequestURL is expected to equal the expected value.\nexpected:%s\nactual:  %s", expected, u)
+	}
+	if err != nil {
+		t.Fatalf("ProductService.BuildRequestURL is not expected to have error")
+	}
+	srv.SetContentID("")
+
 	srv.SetService("digital")
 	expected = expectedBase + "&service=" + url.QueryEscape("digital") + "&site=" + SiteAdult
 	u, err = srv.BuildRequestURL()
@@ -396,6 +417,7 @@ func TestExcuteRequestProductAPIToServer(t *testing.T) {
 	srv.SetSite("DMM.R18")
 	srv.SetService("mono")
 	srv.SetFloor("dvd")
+	srv.SetContentID("15dss00145")
 	srv.SetSort("date")
 	srv.SetLength(1)
 

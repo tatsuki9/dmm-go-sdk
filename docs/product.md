@@ -15,6 +15,7 @@ func main() {
 	dmmapi.SetSite(api.SiteGeneral)
 	dmmapi.SetService("mono")
 	dmmapi.SetFloor("dvd")
+	dmmapi.SetContentID("15dss00145")
 	dmmapi.SetSort("date")
 	dmmapi.SetLength(1)
 	result, err := dmmapi.Execute()
@@ -59,6 +60,7 @@ APIのパラメータとSDKのパラメータの関連について
 | 検索開始位置 | offset | | Offset | int64 |
 | ソート順 | sort | | Sort | string |
 | キーワード | keyword | | Keyword | string |
+| 商品ID | cid | | ContentID | string |
 | 絞りこみ項目 | article | | Article | string |
 | 絞り込みID | article_id | | ArticleID | string |
 | 在庫絞り込み | mono_stock | | Stock | string |

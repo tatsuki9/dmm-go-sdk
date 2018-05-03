@@ -24,6 +24,7 @@ type ProductService struct {
 	Offset      int64  `mapstructure:"offset"`
 	Sort        string `mapstructure:"sort"`
 	Keyword     string `mapstructure:"keyword"`
+	ContentID   string `mapstructure:"cid"`
 	Article     string `mapstructure:"article"`
 	ArticleID   string `mapstructure:"article_id"`
 	GteDate     string `mapstructure:"gte_date"`
@@ -160,6 +161,7 @@ func NewProductService(affiliateID, apiID string) *ProductService {
 		Offset:      DefaultAPIOffset,
 		Sort:        "",
 		Keyword:     "",
+		ContentID:   "",
 		Article:     "",
 		ArticleID:   "",
 		Stock:       "",
@@ -225,6 +227,12 @@ func (srv *ProductService) SetOffset(offset int64) *ProductService {
 // SetKeywordはKeywordパラメータを設定します。
 func (srv *ProductService) SetKeyword(keyword string) *ProductService {
 	srv.Keyword = TrimString(keyword)
+	return srv
+}
+
+// SetContentID set the specified argument to ProductService.ContentID
+func (srv *ProductService) SetContentID(contentID string) *ProductService {
+	srv.ContentID = TrimString(contentID)
 	return srv
 }
 
@@ -363,6 +371,9 @@ func (srv *ProductService) BuildRequestURL() (string, error) {
 	}
 	if srv.Keyword != "" {
 		queries.Set("keyword", srv.Keyword)
+	}
+	if srv.ContentID != "" {
+		queries.Set("cid", srv.ContentID)
 	}
 	if srv.Article != "" {
 		queries.Set("article", srv.Article)
