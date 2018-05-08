@@ -44,6 +44,7 @@ func main() {
 	dmmapi.SetSite(api.SiteGeneral)
 	dmmapi.SetService("mono")
 	dmmapi.SetFloor("dvd")
+	dmmapi.SetContentID("15dss00145")
 	dmmapi.SetSort("date")
 	dmmapi.SetLength(1)
 	result, err := dmmapi.Execute()

@@ -33,6 +33,7 @@ api := client.Product
 api.SetSite(SITE_ALLAGES)
 api.SetService("mono")
 api.SetFloor("dvd")
+api.SetContentID("15dss00145")
 api.SetSort("date")
 api.SetLength(1)
 result, err := api.Execute()
