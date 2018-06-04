@@ -62,7 +62,7 @@ type Item struct {
 	Stock              string             `mapstructure:"stock"`
 	Title              string             `mapstructure:"title"`
 	URL                string             `mapstructure:"URL"`
-	URLMoble           string             `mapstructure:"URLsp"`
+	URLMobile          string             `mapstructure:"URLsp"`
 	Volume             string             `mapstructure:"volume"`
 	ImageURL           ImageURLList       `mapstructure:"imageURL"`
 	SampleImageURL     SampleImageURLList `mapstructure:"sampleImageURL"`
