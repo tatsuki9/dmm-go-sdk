@@ -1,4 +1,4 @@
-module github.com/tatsuki9/dmm-go-sdk/v2
+module github.com/tatsuki9/dmm-go-sdk
 
 go 1.16
 
