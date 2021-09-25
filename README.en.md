@@ -49,7 +49,7 @@ OR
 ```
 package (
     "fmt"
-    "github.com/dmmlabo/dmm-go-sdk/api"
+    "github.com/tatsuki9/dmm-go-sdk/api"
 )
 
 rst, err := NewProductService("dummy-999", "foobarbazbuzz" ).SetSite(SITE_ADULT).SetLength(1).Execute()
@@ -62,4 +62,4 @@ if err != nil {
 
 # Details
 
-see [Godoc](https://godoc.org/github.com/dmmlabo/dmm-go-sdk/api) (English and Japanese) or [our documentation](https://github.com/dmmlabo/dmm-go-sdk/blob/master/docs/README.md) (Japanese ONLY)
+see [Godoc](https://godoc.org/github.com/tatsuki9/dmm-go-sdk/api) (English and Japanese) or [our documentation](https://github.com/dmmlabo/dmm-go-sdk/blob/master/docs/README.md) (Japanese ONLY)

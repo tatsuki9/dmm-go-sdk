@@ -35,7 +35,7 @@ package main
 import (
     "fmt"
     "github.com/dmmlabo/dmm-go-sdk"
-    "github.com/dmmlabo/dmm-go-sdk/api"
+    "github.com/tatsuki9/dmm-go-sdk/api"
 )
 
 func main() {
@@ -62,7 +62,7 @@ func main() {
 package main
 import (
     "fmt"
-    "github.com/dmmlabo/dmm-go-sdk/api"
+    "github.com/tatsuki9/dmm-go-sdk/api"
 )
 func main() {
 	rst, err := api.NewProductService( "dummy-999", "foobarbazbuzz").SetSite(api.SiteAdult).SetLength(1).Execute()
@@ -76,4 +76,4 @@ func main() {
 
 # 詳細
 
-[Godoc](https://godoc.org/github.com/dmmlabo/dmm-go-sdk/api) もしくは [our documentation](https://github.com/dmmlabo/dmm-go-sdk/blob/master/docs/README.md) を参照してください
+[Godoc](https://godoc.org/github.com/tatsuki9/dmm-go-sdk/api) もしくは [our documentation](https://github.com/dmmlabo/dmm-go-sdk/blob/master/docs/README.md) を参照してください

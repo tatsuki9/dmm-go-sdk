@@ -1,7 +1,7 @@
 package dmm
 
 import (
-	"github.com/dmmlabo/dmm-go-sdk/api"
+	"github.com/tatsuki9/dmm-go-sdk/api"
 )
 
 // Client for DMM services
